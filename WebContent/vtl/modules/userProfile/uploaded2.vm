@@ -1,0 +1,4 @@
+
+<script>
+parent.document.getElementById('$divUploadStatusName').innerHTML = '<a href="../download?filename=$!userData.documentFileName2">$!userData.documentFileName2</a> ';
+</script>

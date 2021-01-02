@@ -1,0 +1,40 @@
+<table class="tablex">
+
+	<tr>
+		<td class="tdx"></td>
+		#foreach ( $period in $periods)
+			<td class="tdx">$period.periodName</td>
+		#end
+	</tr>
+
+	#set ( $slotNum = 0 )
+	#foreach ( $day in $days)
+	<tr>
+	
+		<td class="tdx">$day.dayName</td>
+		
+		
+		#foreach ( $period in $periods)
+			
+			<td class="tdx">
+				
+				#if ( $activitySlotMapper.get($slotNum) )
+					#set ( $activities = $activitySlotMapper.get($slotNum) )
+					#foreach ( $activity in $activities )
+						<div style="margin:2px;padding:5px;border-radius: 10px;background-color:#ebebeb">
+						$activity.name
+						</div>
+					#end
+				#else
+					&nbsp;
+				#end
+			</td>
+			
+			#set ( $slotNum = $slotNum + 1 )
+		#end
+		
+
+	</tr>
+	#end
+
+</table>

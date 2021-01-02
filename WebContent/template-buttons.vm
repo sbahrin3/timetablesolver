@@ -1,0 +1,26 @@
+DELETE
+	<button type="button" class="btn btn-confirmation btn-danger"  data-toggle="modal" data-target="#confirmation" onclick="sendAjaxConfirm('Confirm', 'Are you sure to delete this Quotation?', 'deleteQuotation','data_main','quotation_id=$!purchaseQuotation.id')">
+		<i class="fa fa-trash-o" aria-hidden="true"></i>&nbsp;Delete
+	</button>
+			
+	&nbsp;&nbsp;&nbsp;
+
+
+SAVE
+	<button type="button" class="btn btn-success" onclick="sendAjax2('','','')">Save&nbsp;<i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+	
+BACK	
+	<button type="button" class="btn btn-default" onclick="sendAjax('','','')"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+
+	
+PDF
+	<a class="btn btn-primary" target="blank" href="../pdflet/mafex.modules.ShoppingOrderListPDF?order_id=$!purchaseOrder.id">PDF&nbsp;<i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+	
+	
+	
+	
+#if ( $command == "saveProduct" )
+<script>
+	showNotifyMessage("Data successfully saved...");
+</script>
+#end

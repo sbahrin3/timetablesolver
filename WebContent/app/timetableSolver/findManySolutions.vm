@@ -1,0 +1,14 @@
+#set ( $num = 0 )
+#foreach ( $activitySlotMapper in $activitySlotMapperList )
+	#set ( $num = $num + 1 )
+	
+	<div style="margin-top:50px;font-weight:bold">
+		SOLUTION $num
+	</div>
+	
+	<div style="padding:10px">
+	#parse("app/timetableSolver/solution.vm")
+	</div>
+
+
+#end

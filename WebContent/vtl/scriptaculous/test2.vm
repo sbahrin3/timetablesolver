@@ -1,0 +1,40 @@
+<form name="f" method="post">
+
+<table align="center">
+<tr><td>
+
+<ul id="thelist" style="list-style-type:none;padding: 2px; background:red;">
+
+<li id="thelist_1" style="cursor:hand;background:yellow">
+sdfas
+<input type="hidden" name="moduleIds" value="id1">
+</li>
+<li id="thelist_2" style="cursor:hand;background:yellow">
+dfasdf
+<input type="hidden" name="moduleIds" value="id2">
+</li>
+<li id="thelist_3" style="cursor:hand;background:yellow">
+asdfsdf
+<input type="hidden" name="moduleIds" value="id3">
+</li>
+</ul>
+
+</td></tr>
+</table>
+
+<input type="hidden" name="command">
+<input type="button" value="Submit" onclick="updateModules()">
+</form>
+
+<script type="text/javascript" language="javascript" charset="utf-8">
+Sortable.create('thelist');
+</script>
+
+<script>
+function updateModules() {
+document.f.command.value = "updateModules";
+document.f.submit();
+}
+
+
+</script>

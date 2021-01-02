@@ -1,0 +1,9 @@
+
+
+#if ( $command == "saveHidden" )
+	<script>
+	
+		showNotifyMessage("Data saved!");
+		
+	</script>
+#end

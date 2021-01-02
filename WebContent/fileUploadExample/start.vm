@@ -1,0 +1,16 @@
+
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+	<input class="form-control" type="file" id="fileToUpload" name="fileToUpload">
+  </div>
+  <div class="col-sm-6">
+	<button class="btn btn-default" type="button" value="Upload" onclick="uploadFile('fileToUpload', 'divUploadFile')">Upload</button>
+  </div>
+</div>
+
+<div id="divUploadFile"></div>
+
+</div>

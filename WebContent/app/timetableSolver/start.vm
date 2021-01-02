@@ -1,0 +1,23 @@
+<style>
+.tablex
+{
+    table-layout: fixed;
+}
+
+.tdx
+{
+	text-align:center;
+	padding: 2px;
+	width: 150px;
+    border: 1px solid #000;
+    overflow: hidden;
+}
+</style>
+
+<div style="padding:10px">
+<div class="module_title">Generate Timetable</div>
+<div id="data_main">
+	#parse("app/timetableSolver/listActivities.vm")
+</div>
+</div>
+

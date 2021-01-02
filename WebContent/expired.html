@@ -1,0 +1,47 @@
+<html>
+<title>IPSA - SSMS</title>
+<link rel="shortcut icon" href="views/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="views/img/favicon.ico" type="image/x-icon">
+
+<script type="text/javascript" src="bootstrap/jquery-3.3.1.js" ></script>
+<link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.min-3.3.7.css"/>
+<script type="text/javascript" src="bootstrap/bootstrap.min.js" ></script>
+<link rel="stylesheet" type="text/css" href="jquery/jquery.jgrowl.min.css" />
+<script src="jquery/jquery.jgrowl.min.js"></script>	
+
+<body style="background:#979995">
+
+	
+	<div class="modal" id="window-notify-expiry" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">MaFEX</h4>
+				</div>
+				<div class="modal-body" id="div_modal_window">
+				
+					<p style="font-weight:bold;font-size:14pt">
+						Your session has expired!
+						Please login again to continue.
+					</p>
+				
+				</div>
+				
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" onclick="document.location='redirect.jsp'">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<script>
+$( document ).ready(function() {
+	$('#window-notify-expiry').show();
+	setTimeout(function(){ document.location='redirect.jsp'; }, 15000);
+});
+
+</script>
+
+</html>

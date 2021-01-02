@@ -1,0 +1,102 @@
+
+
+<div class="row">
+
+  	<div class="col-sm-6">
+ 
+	  	<div class="form-group">
+			<label for="companyName">Co. Name</label>
+			<input  type="text" maxlength="200" class="form-control" id="companyName" name="companyName" value="$!userData.companyName"  placeholder="">
+		</div>
+		  	
+  	</div>
+  	
+   	<div class="col-sm-6">
+ 
+	  	<div class="form-group">
+			<label for="companyNumber">Co. Registration No.</label>
+			<input  type="text" maxlength="200" class="form-control" id="companyRegistrationNo" name="companyRegistrationNo" value="$!userData.companyRegistrationNo"  placeholder="">
+		</div>
+		  	
+  	</div> 	
+  
+</div>
+
+<div class="row">
+
+  	<div class="col-sm-6">
+ 
+	  	<div class="form-group">
+			<label for="bankName">Bank Name</label>
+			<input  type="text" maxlength="200" class="form-control" id="bankName" name="bankName" value="$!userData.bankName"  placeholder="">
+		</div>
+		  	
+  	</div>
+  	
+   	<div class="col-sm-6">
+ 
+	  	<div class="form-group">
+			<label for="bankNumber">Bank Acct. No.</label>
+			<input  type="text" maxlength="200" class="form-control" id="bankAcctNo" name="bankAcctNo" value="$!userData.bankAcctNo"  placeholder="">
+		</div>
+		  	
+  	</div> 	
+  
+</div>
+
+<div class="form-group">
+  <label for="itemDescription">Upload Document 1</label>
+
+  <div>
+	  <div class="col-sm-6">
+		<input class="form-control" type="file" id="uploadDocument1" name="uploadDocument1">
+	  </div>
+	  <div class="col-sm-6">
+		<button class="btn btn-default" type="button" value="Upload" onclick="uploadFile('uploadDocument', 'uploadDocument1', 'divuploadDocument1', 'userId=$!userData.id&documentNo=1')">Upload</button>
+	  </div>
+  </div>
+  
+  <div style="padding:10px;margin-top:50px">
+  	
+  	<div id="divuploadDocument1">
+  	#if ( $userData.documentFileName1 )
+  		<a href="../download?filename=$!userData.documentFileName1">$!userData.documentFileName1</a>
+  	#end
+  	</div>
+  	
+  </div>
+  
+</div>
+
+<div class="form-group">
+  <label for="itemDescription">Upload Document 2</label>
+
+  <div>
+	  <div class="col-sm-6">
+		<input class="form-control" type="file" id="uploadDocument2" name="uploadDocument2">
+	  </div>
+	  <div class="col-sm-6">
+		<button class="btn btn-default" type="button" value="Upload" onclick="uploadFile('uploadDocument', 'uploadDocument2', 'divuploadDocument2', 'userId=$!userData.id&documentNo=2')">Upload</button>
+	  </div>
+  </div>
+  
+  <div style="padding:10px;margin-top:50px">
+  	
+  	<div id="divuploadDocument2">
+  	#if ( $userData.documentFileName2 )
+  		<a href="../download?filename=$!userData.documentFileName2">$!userData.documentFileName2</a>
+  	#end
+  	</div>
+  	
+  </div>
+  
+</div>
+
+
+
+
+<div class="form-group" style="text-align:right">
+	<button type="button" class="btn btn-success" onclick="sendAjax2('saveHidden', '_hidden', '')">Save&nbsp;<i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+</div>
+
+<div id="_hidden"></div>

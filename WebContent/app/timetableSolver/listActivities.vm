@@ -1,0 +1,56 @@
+<div class="form-group" style="text-align:right">
+	
+	<button type="button" class="btn btn-confirmation btn-primary"  data-toggle="modal" data-target="#confirmation" onclick="sendAjaxConfirm('Confirm', 'Do you want to Run Timetable Solver?', 'findSolution', 'data_main', '')">
+		<i class="fa fa-table" aria-hidden="true"></i>&nbsp;Find Solution ...
+	</button>
+	
+	<button type="button" class="btn btn-confirmation btn-danger"  data-toggle="modal" data-target="#confirmation" onclick="sendAjaxConfirm('Confirm', 'Do you want to Run Timetable Solver?', 'findManySolutions', 'data_main', '')">
+		<i class="fa fa-table" aria-hidden="true"></i>&nbsp;Find Many Solutions ...
+	</button>
+	
+</div>
+
+<table class="table">
+	<tr>
+		<th style="width:20px"></th>
+		<th style="width:100px">Code</th>
+		<th>Name</th>
+		<th>Assigned Teacher(s)</th>
+		<th>Allowed Days</th>
+		<th>Allowed Periods</th>
+		<th></th>
+	</tr>
+	#foreach ( $activity in $activities )
+	<tr>
+		<td>$velocityCount.</td>
+		<td style="cursor:pointer" onclick="sendAjax('settings','data_main','activity_id=$!activity.id')">$!activity.code</td>
+		<td>$!activity.name</td>
+		<td>
+			<ul>
+			#foreach ( $e in $activity.assignedTeachers )
+				<li>$e.name</li>
+			#end
+			</ul>
+		</td>
+		<td>
+			<ul>
+			#foreach ( $e in $activity.allowedDays )
+				<li>$dayNameMapper.get($e)</li>
+			#end
+			</ul>
+		</td>
+		<td>
+			<ul>
+			#foreach ( $e in $activity.allowedPeriods )
+				<li>$periodNameMapper.get($e)</li>
+			#end
+			</ul>
+		</td>
+		<td style="text-align:right">
+
+		</td>
+	</tr>
+	#end
+	
+</table>
+

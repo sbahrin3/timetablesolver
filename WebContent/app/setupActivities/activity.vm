@@ -1,0 +1,16 @@
+
+<div class="form-group">
+	<label>Activity Code</label>
+	<input data-required="true" data-msg="Enter Code." type="text" maxlength="10" class="form-control" id="activity_code" name="activity_code" value="$!activity.code"  placeholder="">
+</div>
+
+<div class="form-group">
+	<label>Activity Name</label>
+	<input data-required="true" data-msg="Enter Name." type="text" class="form-control" id="activity_name" name="activity_name" value="$!activity.name"  placeholder="">
+</div>
+
+<div class="form-group" style="text-align:right">
+	<button type="button" class="btn btn-primary" onclick="saveData('saveActivity', 'data_main', 'activity_id=$!activity.id')">Save</button>
+	<button type="button" class="btn btn-default" onclick="sendAjax('listActivities','data_main','')">Cancel</button>
+
+</div>

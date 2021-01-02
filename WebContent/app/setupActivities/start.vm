@@ -1,0 +1,7 @@
+<div style="padding:10px">
+<div class="module_title">Activities</div>
+<div id="data_main">
+	#parse("app/setupActivities/listActivities.vm")
+</div>
+</div>
+

@@ -1,0 +1,3 @@
+<script>
+parent.document.getElementById('divUploadFile').innerHTML = 'File: $!savedFileName successfully uploaded.';
+</script>

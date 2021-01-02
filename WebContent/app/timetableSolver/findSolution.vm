@@ -1,0 +1,7 @@
+
+
+<div>
+
+	#parse("app/timetableSolver/solution.vm")
+
+</div>
