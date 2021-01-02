@@ -1,0 +1,2 @@
+# timetablesolver
+Automatic Timetable Solver
