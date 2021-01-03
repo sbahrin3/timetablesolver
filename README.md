@@ -30,7 +30,7 @@ As mentioned above, the CP solver for this timetable scheduling is using an open
 
 For this simple demo project, I have only create a solver for teacher's constraint, i.e. a teacher must not exits in the same time slot.
 
-There are many others constraints variables shold be consider next.  This is an on going project, therefore, I will enhance and add more constraints to this.
+There are many others constraints variables that need to be considered next.  This is an on going project, therefore, I will enhance and add more constraints to this.
 
 The Java class that deals with scheduling solver is <b>TimetableSolver.java</b>.  You can find this Java program in the <b>src</b> folder within in the <b>my.timetable.module</b> package.
 
