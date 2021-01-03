@@ -1,5 +1,6 @@
 # Automatic Timetable Solver
 
+### Intro ###
 
 This is a Java Project for the School Timetable Generation solution.  The solving of scheduling activities method that being used here is Constraint Programming or CP for short, and the CP library is <a href="https://github.com/chocoteam/choco-solver">Choco-Solver</a>.
 
@@ -22,6 +23,16 @@ Make sure your Eclipse has the Apache Tomcat Server integration done.
 
 You can run this project within your Eclipse environment by selecting the <b>Run As -> Run on Server</b> on this project.  
 
+
+### Timetable Constraints Solver ###
+
+As mentioned above, the CP solver for this timetable scheduling is using an open-source Choco-Solver library.
+
+For this simple demo project, I have only create a solver for teacher's constraint, i.e. a teacher must not exits in the same time slot.
+
+There are many others constraints variables shold be consider next.  This is an on going project, therefore, I will enhance and add more constraints to this.
+
+The Java class that deals with scheduling solver is <b>TimetableSolver.java</b>.  You can find this Java program in the <b>src</b> folder within in the <b>my.timetable.module</b> package.
 
 by
 Shamsul Bahrin
