@@ -1,6 +1,5 @@
 # Automatic Timetable Solver
 
-### Intro ###
 
 This is a Java Project for the School Timetable Generation solution.  The solving of scheduling activities method that being used here is Constraint Programming or CP for short, and the CP library is <a href="https://github.com/chocoteam/choco-solver">Choco-Solver</a>.
 
