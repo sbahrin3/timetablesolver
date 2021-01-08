@@ -1,0 +1,31 @@
+<div class="form-group" style="text-align:right">
+	<button type="button" class="btn btn-success" onclick="sendAjax('addVenue', 'data_main', '')">Add New</button>
+</div>
+
+<table class="table">
+	<tr>
+		<th style="width:20px"></th>
+		<th style="width:100px">Code</th>
+		<th>Name</th>
+		<th></th>
+	</tr>
+	#foreach ( $venue in $venues )
+	<tr>
+		<td>$velocityCount.</td>
+		<td>$!venue.code</td>
+		<td>$!venue.name</td>
+		<td style="text-align:right">
+			<div class="btn-group">
+				<button type="button" class="btn btn-confirmation btn-default btn-sm"  data-toggle="modal" data-target="#confirmation" onclick="sendAjaxConfirm('Confirm', 'Are you sure to delete this Venue?', 'deleteVenue','data_main','venue_id=$!venue.id')">
+					<i class="fa fa-trash-o" aria-hidden="true"></i>
+				</button>
+				<button type="button" class="btn btn-default btn-sm" onclick="sendAjax('editVenue','data_main','venue_id=$!venue.id')">
+					<i class="fa fa-pencil" aria-hidden="true"></i>
+				</button>
+			
+			</div>
+		</td>
+	</tr>
+	#end
+	
+</table>

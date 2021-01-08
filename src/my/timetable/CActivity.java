@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import my.timetable.entity.Activity;
+import my.timetable.entity.Venue;
 
 public class CActivity {
 	
@@ -11,8 +12,11 @@ public class CActivity {
 	private String name;
 	private int[] allowedSlots;
 	private int[] allowedDays;
+	private int[] allowedPeriods;
+	private int[] allowedVenues;
 	private List<CTeacher> teachers;
 	private Activity activity;
+	private Venue venue;
 	
 	public CActivity() { }
 	
@@ -72,6 +76,30 @@ public class CActivity {
 
 	public void setActivity(Activity activity) {
 		this.activity = activity;
+	}
+
+	public int[] getAllowedVenues() {
+		return allowedVenues;
+	}
+
+	public void setAllowedVenues(int[] allowedVenues) {
+		this.allowedVenues = allowedVenues;
+	}
+
+	public Venue getVenue() {
+		return venue;
+	}
+
+	public void setVenue(Venue venue) {
+		this.venue = venue;
+	}
+
+	public int[] getAllowedPeriods() {
+		return allowedPeriods;
+	}
+
+	public void setAllowedPeriods(int[] allowedPeriods) {
+		this.allowedPeriods = allowedPeriods;
 	}
 	
 	

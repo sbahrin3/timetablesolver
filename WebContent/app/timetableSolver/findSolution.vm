@@ -1,4 +1,9 @@
-
+<div class="form-group" style="text-align:left">
+	
+	<button type="button" class="btn btn-confirmation btn-danger" onclick="sendAjax('findSolution', 'data_main', '')">
+		<i class="fa fa-table" aria-hidden="true"></i>&nbsp;Run again ...
+	</button>
+</div>
 
 <div>
 

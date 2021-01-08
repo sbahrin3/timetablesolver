@@ -23,6 +23,12 @@
 					#foreach ( $activity in $activities )
 						<div style="margin:2px;padding:5px;border-radius: 10px;background-color:#ebebeb">
 						$activity.name
+						<br/>
+						($activity.venue.name)
+						<br/>
+						#foreach ( $e in $activity.assignedTeachers )
+							$e.code, 
+						#end
 						</div>
 					#end
 				#else

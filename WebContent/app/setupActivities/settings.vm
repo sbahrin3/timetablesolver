@@ -4,50 +4,72 @@
 	<span style="font-weight:bold">$!activity.code - $!activity.name</span>
 </div>
 
-<div class="form-group">
-	<label>Allowed Days</label>
-</div>
 
-<div style="margin-left:10px">
-	<ul style="list-style-type:none">
-	
-	#foreach ( $day in $days )
-		<li><input type="checkbox" name="days" value="$day.dayNum" #if ( $activity.allowedDays.contains($day.dayNum)) checked #end>&nbsp;$day.dayName</li>
-	#end
-	</ul>
 
-</div>
+		<div class="form-group" style="margin-top:40px">
+			<label>Assigned Venue</label>
+		</div>
+		
+		<div style="margin-left:10px">
+			<ul style="list-style-type:none">
+				#foreach ( $venue in $venues )
+					<li><input type="radio" name="venue" value="$!venue.id" #if ( $activity.venue.equals($venue)) checked #end>&nbsp;$!venue.name</li>
+				#end
+			</ul>
+		
+		</div>  
+  
+		<div class="form-group" style="margin-top:40px">
+			<label>Assigned Teachers</label>
+		</div>
+		
+		<div style="margin-left:10px">
+			<ul style="list-style-type:none">
+				#foreach ( $teacher in $teachers )
+					<li><input type="checkbox" name="teachers" value="$!teacher.id" #if ( $activity.assignedTeachers.contains($teacher)) checked #end>&nbsp;$!teacher.name</li>
+				#end
+			</ul>
+		
+		</div>  
+  
+  
+		<div class="form-group">
+			<label>Allowed Days</label>
+		</div>
+		
+		<div style="margin-left:10px">
+			<ul style="list-style-type:none">
+			
+			#foreach ( $day in $days )
+				<li><input type="checkbox" name="days" value="$day.dayNum" #if ( $activity.allowedDays.contains($day.dayNum)) checked #end>&nbsp;$day.dayName</li>
+			#end
+			</ul>
+		
+		</div>  
+  
+		<div class="form-group" style="margin-top:40px">
+			<label>Allowed Periods</label>
+		</div>
+		
+		<div style="margin-left:10px">
+			<ul style="list-style-type:none">
+			
+			#foreach ( $period in $periods )
+				<li><input type="checkbox" name="periods" value="$period.periodNum" #if ( $activity.allowedPeriods.contains($period.periodNum)) checked #end>&nbsp;Period $period.periodNum: $period.periodName</li>
+			#end
+			
+			</ul>
+		
+		</div>  
+  
 
-<div class="form-group" style="margin-top:40px">
-	<label>Allowed Periods</label>
-</div>
-
-<div style="margin-left:10px">
-	<ul style="list-style-type:none">
-	
-	#foreach ( $period in $periods )
-		<li><input type="checkbox" name="periods" value="$period.periodNum" #if ( $activity.allowedPeriods.contains($period.periodNum)) checked #end>&nbsp;Period $period.periodNum: $period.periodName</li>
-	#end
-	
-	</ul>
-
-</div>
-
-<div class="form-group" style="margin-top:40px">
-	<label>Assigned Teachers</label>
-</div>
-
-<div style="margin-left:10px">
-	<ul style="list-style-type:none">
-		#foreach ( $teacher in $teachers )
-			<li><input type="checkbox" name="teachers" value="$!teacher.id" #if ( $activity.assignedTeachers.contains($teacher)) checked #end>&nbsp;$!teacher.name</li>
-		#end
-	</ul>
-
-</div>
 
 <div class="form-group" style="text-align:left">
-	<button type="button" class="btn btn-success" onclick="saveData('saveSettings', 'data_main', 'activity_id=$!activity.id')">Save Activity Settings</button>
+	<button type="button" class="btn btn-success" onclick="
+		var venue_id = document.getElementById('venue');
+		console.log('venue = ' + venue_id);
+		saveData('saveSettings', 'data_main', 'activity_id=$!activity.id');
+	">Save Activity Settings</button>
 	<button type="button" class="btn btn-default" onclick="sendAjax('listActivities','data_main','')">Back</button>
 
 </div>

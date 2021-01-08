@@ -240,7 +240,7 @@
 			if (document.body.clientWidth > 1000 ) {
 				openNav();
 			}
-			getPage('my.timetable.module.SetupTeachersModule');
+			getPage('my.timetable.module.SetupVenuesModule');
 		#end
 
 

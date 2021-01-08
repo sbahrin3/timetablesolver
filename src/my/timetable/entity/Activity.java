@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -24,6 +25,8 @@ public class Activity {
 	private String name;
 	@Column(length=10)
 	private String code;
+	@OneToOne
+	private Venue venue;
 	
 	@Transient
 	private List<Teacher> assignedTeachers;
@@ -31,6 +34,10 @@ public class Activity {
 	private List<Integer> allowedDays;
 	@Transient
 	private List<Integer> allowedPeriods;
+	@Transient
+	private List<Integer> allowedVenues;
+	@Transient
+	private int venueNum = -1;
 	
 	public Activity() {
 		setId(lebah.util.UIDGenerator.getUUID());
@@ -82,8 +89,30 @@ public class Activity {
 	public void setAllowedPeriods(List<Integer> allowedPeriods) {
 		this.allowedPeriods = allowedPeriods;
 	}
-	
-	
-	
 
+	public List<Integer> getAllowedVenues() {
+		return allowedVenues;
+	}
+
+	public void setAllowedVenues(List<Integer> allowedVenues) {
+		Collections.sort(allowedVenues);
+		this.allowedVenues = allowedVenues;
+	}
+
+	public int getVenueNum() {
+		return venueNum;
+	}
+
+	public void setVenueNum(int venueNum) {
+		this.venueNum = venueNum;
+	}
+
+	public Venue getVenue() {
+		return venue;
+	}
+
+	public void setVenue(Venue venue) {
+		this.venue = venue;
+	}
+	
 }

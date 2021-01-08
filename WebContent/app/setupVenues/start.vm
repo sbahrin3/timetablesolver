@@ -1,0 +1,7 @@
+<div style="padding:10px">
+<div class="module_title">Venues</div>
+<div id="data_main">
+	#parse("app/setupVenues/listVenues.vm")
+</div>
+</div>
+

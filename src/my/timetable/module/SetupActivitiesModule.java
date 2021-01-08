@@ -17,6 +17,7 @@ import my.timetable.entity.ActivityAllowedDay;
 import my.timetable.entity.ActivityAllowedPeriod;
 import my.timetable.entity.ActivityAssignedTeacher;
 import my.timetable.entity.Teacher;
+import my.timetable.entity.Venue;
 
 /**
  * 
@@ -67,6 +68,7 @@ public class SetupActivitiesModule extends LebahModule { // LebahUserAccessModul
 	}
 	
 	private void activitySettingsData(Activity activity) {
+		
 		List<ActivityAssignedTeacher> teacherList = db.list("select t from ActivityAssignedTeacher t where t.activity.id = '" + activity.getId() + "'");
 		activity.setAssignedTeachers(teacherList.stream().map(e -> e.getTeacher()).collect(Collectors.toList()));
 		
@@ -75,6 +77,8 @@ public class SetupActivitiesModule extends LebahModule { // LebahUserAccessModul
 		
 		List<ActivityAllowedPeriod> periodList = db.list("select t from ActivityAllowedPeriod t where t.activity.id = '" + activity.getId() + "'");
 		activity.setAllowedPeriods(periodList.stream().map(e -> e.getPeriodNum()).collect(Collectors.toList()));
+	
+	
 	}
 	
 	@Command("addActivity")
@@ -121,6 +125,9 @@ public class SetupActivitiesModule extends LebahModule { // LebahUserAccessModul
 		List<Teacher> teachers = db.list("select t from Teacher t order by t.name");
 		context.put("teachers", teachers);
 		
+		List<Venue> venues = db.list("select v from Venue v order by v.code");
+		context.put("venues", venues);
+		
 		mapperDayPeriod();
 		
 		return path + "/settings.vm";
@@ -166,6 +173,13 @@ public class SetupActivitiesModule extends LebahModule { // LebahUserAccessModul
 				db.save(allowedPeriod);
 			});
 		});
+		
+		String venueId = getParam("venue");
+		if ( !"".equals(venueId) ) {
+			Venue venue = db.find(Venue.class, venueId);
+			activity.setVenue(venue);
+			db.update(activity);
+		}
 		
 		return settings();
 	}
