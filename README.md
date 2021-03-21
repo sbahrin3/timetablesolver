@@ -7,6 +7,16 @@ This is a Java Project for the School Timetable Generation solution.  The solvin
 
 This repository is an Eclipse Dynamic Web Module, hence to clone this you need to do it within Eclipse.
 
+
+## Embedded Database - H2 ##
+
+This project comes with an embedded H2 database, so you are not required to set up any database server to run it.
+
+
+## MySQL Database ##
+
+However, if you want to use MySQL database instead (which is not needed!), follow this instructions:
+
 The mysqldump file is located in the <b>\dbdump</b> folder.  Use this to create your database with some data in it.
 
 Edit the database connection settings in the <b>dbpersistence.properties</b> file.
