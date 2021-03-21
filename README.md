@@ -12,6 +12,16 @@ This repository is an Eclipse Dynamic Web Module, hence to clone this you need t
 
 This project comes with an embedded H2 database, so you are not required to set up any database server to run it.
 
+The setting for H2 is located in the <b>dbpersistence.properties</b> file:
+
+```
+title.default=Timetable
+driver.default=org.h2.Driver
+dialect.default=org.hibernate.dialect.H2Dialect
+user.default=sa
+password.default=
+url.default=jdbc:h2:file:~/h2db/timetabledb
+```
 
 ## MySQL Database ##
 
