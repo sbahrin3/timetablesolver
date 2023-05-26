@@ -2,3 +2,4 @@
 *.js linguist-detectable=false
 *.css linguist-detectable=false
 *.1 linguist-detectable=false
+*.3 linguist-language=text
